@@ -227,7 +227,7 @@
                 for element in mylist:
                     do_something(element)
               </code></pre>
-            <p class="fragment fade-in">... we teach a different mental concept of a list.</p>
+            <p class="fragment fade-in">... we teach a different mental concept of a list: a list is composed of elements that can be accessed sequentially.</p>
           </section>        
           <section>
               <p>Step 3: Then we generalize: the concept is really about iterables: </p>
@@ -247,10 +247,10 @@
             <section>
                 <p>Another example in Python: file-like objects.</p>
                 <p>Using the <span style="font-family: monospace">io</span> module 
-                  (<span style="font-family: monospace">StringIO</span>and <span style="font-family: monospace">BytesIO</span> 
+                  (<span style="font-family: monospace">StringIO</span> and <span style="font-family: monospace">BytesIO</span> 
                 we can treat strings as streams the same way as we do files: We can open and close
                 them, read from them with buffer, write to them....</p>
-                <p class="fragment fade-in">(Sockets work very much the same way.)</p>
+                <p class="fragment fade-in">(Sockets and serial interfaces work very much the same way.)</p>
             </section>   
             <section>
               <h2>Writing your own abstractions</h2>
@@ -260,9 +260,9 @@
               <ul>
                 <li class="fragment fade-in">How do you segment the processing flow into functions? (... and modules, packages...)</li>
                 <li class="fragment fade-in">This is an expression of how you conceptualize your task</li>
-                <li class="fragment fade-in">You can: Re-use. Pass around data. Hide implementation choices and branches behind interfaces.</li>
+                <li class="fragment fade-in">You can: Re-use. Pass around data. Hide implementation choices behind interfaces.</li>
               </ul> 
-              <p class="fragment fade-in">Abstraction for problem-solving </p>  
+              <p class="fragment fade-in"><i>Abstraction for problem-solving </i></p>  
             </section>
             <section>
                 <h3>... by choosing your data representation:</h3>
@@ -271,18 +271,18 @@
                   <li class="fragment fade-in">The abstractions that represent data and the abstractions that represent programming steps will be developed iteratively, hand-in-hand.</li>
                   <li class="fragment fade-in">Data representation means to decide what the objects <i>are</i> that your code is manipulating</li>
                 </ul> 
-                <p class="fragment fade-in">Abstraction for reasoning about the overall shape of your problem </p>                
+                <p class="fragment fade-in"><i>Abstraction for reasoning about the overall shape of your problem</i> </p>                
             </section>
             <section>
                 <h3>Tying it together </h3>
                 <ul>
-                  <li class="fragment fade-in">The transition to object-oriented design becomescomes natural</li>
+                  <li class="fragment fade-in">The transition to object-oriented design becomes natural</li>
                   <li class="fragment fade-in">Many scientific Python users never write their own objects. But it becomes easy once we have clarified what our objects are, how they behave, and what operations are performed on them. </li>
                 </ul> 
                 <p class="fragment fade-in">(And we have reached the point where we can talk about abstraction and encapsulation.) </p>                
             </section>
             <section>
-              <h2>Abstraction pitfalls and Python gotchas</h2>
+              <h2>Abstraction pitfalls</h2>
             </section>
             <section>
               <h3>Abstractions leak. Python abstractions leak quite a bit.</h3>
