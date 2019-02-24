@@ -48,32 +48,44 @@
           <p>Chris Waigl</p>
         </section>
         <section>
-            <img src="img/2uhw12.jpg">
-            <p  class="smallsmall">See <a href="http://hyperboleandahalf.blogspot.com/2010/06/this-is-why-ill-never-be-adult.html">
-              Hyperbole and a Half</a></p>
+          <img src="img/2uhw12.jpg">
+          <p class="smallsmall">See <a href="http://hyperboleandahalf.blogspot.com/2010/06/this-is-why-ill-never-be-adult.html">
+            Hyperbole and a Half</a></p>
         </section>
         <section>
-          <p class="smaller">I'm an earth scientist. I make maps and shuffle data around.</p>
+          <p>I'm an earth scientist.</p>
           <div class="container">
             <div class="col">
               <img src="img/ottercode2.jpg">
             </div>
             <div class="col">
-                <p class="smaller">Scientists often write mediocre or outright bad code.</p>
+                <p class="smaller fragment fade-in">Dirty secret: Scientists often write mediocre or outright bad code.</p>
                 <img src="img/ottercode1.jpg">
             </div>
           </div>
         </section>
         <section>
-          <h3>This talk is for ...</h2>
-          <p class="fragment fade-in"><i>(everyone of course, but specifically...)</i></p>
-          <ul>
-            <li class="fragment fade-in">Self-taught Python users in the sciences or elsewhere</li>
-            <li class="fragment fade-in">Those who mentor them</li>
-          </ul>
+          <p>Alice Harpole: 
+            <a href="https://www.software.ac.uk/blog/2017-09-12-how-write-code-scientist">
+              https://www.software.ac.uk/blog/2017-09-12-how-write-code-scientist</a></p>
+          <div class="container">
+            <div class="col">
+                <img src="img/aliceh.png">
+            </div>
+            <div class="col">
+                <p class="smaller"><i>"I've regularly read papers describing exciting new codes, 
+                  only to find that there are number of issues preventing me from looking 
+                  at or using the code itself. The code is often not open source, which means I can’t 
+                  download or use it. Code commonly has next to no documentation, 
+                  <span class="fragment highlight-current-green">so even if I can download 
+                  it, it's very difficult to work out how it runs</span>. There can be questionable approaches to 
+                  testing with an overreliance on replicating "standard" results, but no unit tests exist 
+                  to demonstrate that the individual parts of the code work as they should."</i></p>
+            </div>
+          </div>
           <aside class="notes" data-markdown>
             <textarea data-template>
-              * Put your speaker notes here.
+              I've regularly read papers describing exciting new codes, only to find that there are number of issues preventing me from looking at or using the code itself. The code is often not open source, which means I can’t download or use it. Code commonly has next to no documentation, so even if I can download it, it's very difficult to work out how it runs. There can be questionable approaches to testing with an overreliance on replicating "standard" results, but no unit tests exist to demonstrate that the individual parts of the code work as they should.
             </textarea>
           </aside>
         </section>
@@ -99,16 +111,197 @@
                     </span>"</i></p>
             </div>
           </div>
+          <aside class="notes" data-markdown>
+              <textarea data-template>
+                  Scientists in general can’t write good code. They write code simply to achieve their immediate goal, and then either throw it away, or keep using it for themselves. They [...] don’t seem to be concerned with code quality, code coverage, API design. Not to mention scientific infrastructure, deployment on multiple servers, managing environment. These things are rarely done properly in the scientific community. 
+              </textarea>
+            </aside>
         </section>
         <section>
-          <h2>Create your other slides here</h2>
+          <p>Neil Saunders: 
+            <a href="https://nsaunders.wordpress.com/2014/05/14/this-is-why-code-written-by-scientists-gets-ugly/">
+              https://nsaunders.wordpress.com/2014/05/14/this-is-why-code-written-by-scientists-gets-ugly/</a></p>
+          <div class="container">
+            <div class="col">
+                <img src="img/nsaunders.png">
+            </div>
+            <div class="col">
+                <p><i>"One answer: we begin with exploratory data analysis 
+                    and 
+                  <span class="fragment highlight-current-green">never get around to cleaning it up.</span> "</i></p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Remedies?</h3>
+          <p class="fragment fade-up">Teach scientists code organization, version control, 
+            software engineering practices</p>
+          <p class="fragment fade=up">Hire dedicated scientific programmers</p>
+          <p class="fragment fade-in"><span class="fragement fade-in">"It's all good, scientists need to make a mess!"</span><span class="fragment fade-in"> NOT!</span></p>
+          <p class="fragment fade-up"><i>... ok, but ...</i></p>
           <aside class="notes" data-markdown>
             <textarea data-template>
               * Put your speaker notes here.
             </textarea>
           </aside>
+        </section>  
+        <section>
+          <h3>What about the quality of the code itself?</h3>
+          <p class="fragment fade-in">We can <span class="fragment highlight-green"><i>and should</i> </span> also work on writing better code.</p>
+          <p class="fragment fade-in">
+            <span class="fragment highlight-green">Thinking about code through the lens of abtraction is going to help us.</span> </p>
         </section>
         <section>
+          <h2>Abstraction and mental chunking</h2>
+          <p class="fragment fade-in"><i>(abstract != concrete)</i></p>
+        </section>
+        <section>
+          <h3>Abstraction in the Python documentation</h3>
+          <p class="fragment fade-in">The Python Language Reference</p>
+          <img class="fragment fade-in" src="img/pydoc1.png">
+        </section>
+        <section>
+          <p>Module documentation of <span style="font-family: monospace">urllib</span> and <span style="font-family: monospace">ssl</span></p>
+          <img class="fragment fade-in" src="img/pydoc2.png">
+          <img class="fragment fade-in" src="img/pydoc3.png">
+        </section>
+        <section>
+          <p>The Programming FAQ warns of "excessive abstraction" (in the "performance" section).</p>
+          <img class="fragment fade-in" src="img/pydoc4.png">
+          <p class="fragment fade-in">(Note the notion of <i>levels</i> of abstraction.)</p>
+        </section>
+        <section>
+            <p>Basic abstraction-related example in student code.</p>
+            <pre><code data-trim>
+                with open("data_file.json", "r") as read_file:
+                    data = json.load(read_file)
+              </code></pre>
+            <pre class="fragment fade-in"><code data-trim>
+                json_string = """
+                {
+                    "dataset": {
+                        "temp": 28.4,
+                        "species": "Betula",
+                        "datestamp": "2019-01-03 14:55:22"
+                    }
+                }
+                """
+                data = json.loads(json_string)
+              </code></pre>
+        </section>
+        <section>
+            <pre><code data-trim>
+                >>> data['dataset']['temp']
+                28.4
+                >>> data['dataset']['datestamp']
+                '2019-01-03 14:55:22'
+              </code></pre>
+            <pre class="fragment fade-in"><code data-trim>
+              >>> type(data['dataset']['datestamp'])
+            </code></pre>
+            <p class="fragment fade-in">• Not a datestamp, or a datetime, 
+              but a string. </p>
+        </section>
+        <section>
+          <h2>First encounters with abstraction in Python</h2>          
+        </section>
+        <section>
+          <h3>Duck typing is about abstraction</h3>
+          <p>Let's quote the Python Language Reference again:</p>
+          <blockquote>An object’s type determines the operations that the object supports</blockquote>
+        </section>
+        <section>
+          <p>For example, iterating through a list.</p>
+          <p>Step 1: A beginner who writes this...</p>
+          <pre><code data-trim>
+              mylist = [1, 5, 8, 2, 9]
+              for ii in range(len(mylist)):
+                  do_something(mylist[ii])
+            </code></pre>
+          <p class="fragment fade-in" >... thinks of a list as some sort of array with an index that can be incremented.</p>
+        </section>
+        <section>
+            <p>Step 2: When we teach her to write code like this ... </p>
+            <pre><code data-trim>
+                mylist = [1, 5, 8, 2, 9]
+                for element in mylist:
+                    do_something(element)
+              </code></pre>
+            <p class="fragment fade-in">... we teach a different mental concept of a list.</p>
+          </section>        
+          <section>
+              <p>Step 3: Then we generalize: the concept is really about iterables: </p>
+              <pre><code data-trim>
+                  myiterable = ... # could be list, set, tuple, string, dictionary ....
+                  for element in myiterable:
+                      do_something(element)
+                </code></pre>
+              <p class="fragment fade-in">Note: The consistency of Python becomes evident. Compare with MATLAB:</p>
+                <pre class="fragment fade-in"><code data-trim>
+                  v = [1 5 8 17]
+                  for element = v
+                      do_something(element)
+                  end
+                  </code></pre>
+            </section> 
+            <section>
+                <p>Another example in Python: file-like objects.</p>
+                <p>Using the <span style="font-family: monospace">io</span> module 
+                  (<span style="font-family: monospace">StringIO</span>and <span style="font-family: monospace">BytesIO</span> 
+                we can treat strings as streams the same way as we do files: We can open and close
+                them, read from them with buffer, write to them....</p>
+                <p class="fragment fade-in">(Sockets work very much the same way.)</p>
+            </section>   
+            <section>
+              <h2>Writing your own abstractions</h2>
+            </section>    
+            <section>
+              <h3>... by writing functions:</h3>
+              <ul>
+                <li class="fragment fade-in">How do you segment the processing flow into functions? (... and modules, packages...)</li>
+                <li class="fragment fade-in">This is an expression of how you conceptualize your task</li>
+                <li class="fragment fade-in">You can: Re-use. Pass around data. Hide implementation choices and branches behind interfaces.</li>
+              </ul> 
+              <p class="fragment fade-in">Abstraction for problem-solving </p>  
+            </section>
+            <section>
+                <h3>... by choosing your data representation:</h3>
+                <ul>
+                  <li class="fragment fade-in">What comes first, the data or the functions that handle the data? </li>
+                  <li class="fragment fade-in">The abstractions that represent data and the abstractions that represent programming steps will be developed iteratively, hand-in-hand.</li>
+                  <li class="fragment fade-in">Data representation means to decide what the objects <i>are</i> that your code is manipulating</li>
+                </ul> 
+                <p class="fragment fade-in">Abstraction for reasoning about the overall shape of your problem </p>                
+            </section>
+            <section>
+                <h3>Tying it together </h3>
+                <ul>
+                  <li class="fragment fade-in">The transition to object-oriented design becomescomes natural</li>
+                  <li class="fragment fade-in">Many scientific Python users never write their own objects. But it becomes easy once we have clarified what our objects are, how they behave, and what operations are performed on them. </li>
+                </ul> 
+                <p class="fragment fade-in">(And we have reached the point where we can talk about abstraction and encapsulation.) </p>                
+            </section>
+            <section>
+              <h2>Abstraction pitfalls and Python gotchas</h2>
+            </section>
+            <section>
+              <h3>Abstractions leak. Python abstractions leak quite a bit.</h3>
+                <ul>
+                    <li class="fragment fade-in">Error messages and exceptions may refer to underlying code that is at a deeper abstraction level </li>
+                    <li class="fragment fade-in">Objects are not watertight: <span style="font-family: monospace">myobject.__dict__</span> allows access to attributes under the hood.</li>
+                </ul> 
+            </section>
+            <section>
+                <h3>Some Python gotchas are related to abstraction</h3>
+                <p>The mutable default function argument gotcha.</p>
+            </section>
+            <section>              
+              <h3>Remember the warning about performance from the Programming FAQ?</h3>
+              <ul>
+                  <li class="fragment fade-in">"Abstraction, simplicity, performance: choose two"</li>
+                  <li class="fragment fade-in">Scientific Python libraries to the rescue: They offer a wide choice of abstractions that are optimised for performance or expressiveness.</li>
+              </ul> </section>
+            <section>
             <div class="container">
                 <div class="col">
                   <img src="img/jack.jpg">
@@ -117,20 +310,20 @@
                    <img src="img/lara.jpg">
                 </div>
               </div>
-          <p>
-            <a href="http://example.com">
-              <i class="fab fa-firefox"></i>example.com
+          <p style="font-size: 75%!important">
+            <a href="https://github.com/chryss/abstraction-for-students-of-all-the-things">
+              <i class="fab fa-firefox"></i>https://github.com/chryss/abstraction-for-students-of-all-the-things
             </a>
-            •
+            <br>
             <a href="https://github.com/chryss">
               <i class="fab fa-github"></i>chryss
             </a>
-            •
+            &nbsp;&nbsp;
             <a href="https://twitter.com/chrys">
               <i class="fab fa-twitter"></i>@chrys
             </a>
           </p>
-          <p>
+          <p style="font-size: 75%!important">
             <a href="mailto:chris@threeowlsdata.com">
               <i class="fas fa-envelope"></i>chris@threeowlsdata.com
             </a>
@@ -142,6 +335,14 @@
             </a>
           </p>
         </section>
+        <section>
+          <h3>Create your other slides here</h3>
+          <aside class="notes" data-markdown>
+            <textarea data-template>
+              * Put your speaker notes here.
+            </textarea>
+          </aside>
+        </section>  
       </div>
     </div>
     <script src="lib/js/head.min.js"></script>
