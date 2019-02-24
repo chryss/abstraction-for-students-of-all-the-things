@@ -2,34 +2,19 @@
 Abstraction for students of all the things
 *************************************
 
-Become a better programmer by thinking deeply about abstraction
+Become a better programmer by thinking deeply about abstraction,
 
-Requirements
-============
+A talk presented at `PyCascades 2019 <https://2019.pycascades.com>`
 
-You have to install the following requirements to build and serve the
-presentation:
+To run
+======
 
-- `npm <https://www.npmjs.com/>`_
-- `Python 3.4 <https://www.python.org/>`_ or newer
-
-Installing and linking the dependencies
-=======================================
-
-You can install and link all required resources by running
+You have to have Python 3 installed
 
 ::
 
-    $ make link
+    $ python -m http.server 
 
-Running the presentation
-========================
-
-You can serve the slides by running
-
-::
-
-    $ make serve
 
 Controlling the presentation
 ============================
@@ -41,14 +26,6 @@ Controlling the presentation
 - Use the *B* key to make the screen dark. Push the same key to brighten the screen again.
 - Use the *ESC* key to enter the bird's-eye view showing all slides. Then use the *arrow keys* to move around.
 
-Showing all tasks in the ``Makefile``
-=====================================
-
-You can show all tasks in the ``Makefile`` by running
-
-::
-
-    $ make
 
 License
 =======

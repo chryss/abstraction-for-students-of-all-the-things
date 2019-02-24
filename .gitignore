@@ -1,9 +1,9 @@
 .nvmrc
 .python-version
-css/*
-!css/custom.css
-fonts
-js
+#css/*
+#!css/custom.css
+#fonts
+#js
 lib
 node_modules
 plugin
