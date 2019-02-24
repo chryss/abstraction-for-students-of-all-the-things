@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Presentation metadata -->
+    <title>Abstraction for students of all the things</title>
+    <meta name="description" content="Become a better programmer by thinking deeply about abstraction">
+    <meta name="author" content="Chris Waigl">
+    <!-- reveal.js CSS -->
+    <link rel="stylesheet" href="css/reveal.css">
+    <!-- The id attribute must be defined for the reveal.js-menu themes panel -->
+    <link rel="stylesheet" href="css/theme/league.css" id="theme">
+    <!-- Devicons CSS -->
+    <link rel="stylesheet" href="css/devicons.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/fa-solid.css">
+    <link rel="stylesheet" href="css/fa-regular.css">
+    <link rel="stylesheet" href="css/fa-brands.css">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style>
+        .container{
+            display: flex;
+        }
+        .col{
+            flex: 1;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Abstraction for students of all the things</h2>
+          <p>PyCascades 2019</p>
+          <p>Chris Waigl</p>
+        </section>
+        <section>
+            <img src="img/2uhw12.jpg">
+            <p  class="smallsmall">See <a href="http://hyperboleandahalf.blogspot.com/2010/06/this-is-why-ill-never-be-adult.html">
+              Hyperbole and a Half</a></p>
+        </section>
+        <section>
+          <p class="smaller">I'm an earth scientist. I make maps and shuffle data around.</p>
+          <div class="container">
+            <div class="col">
+              <img src="img/ottercode2.jpg">
+            </div>
+            <div class="col">
+                <p class="smaller">Scientists often write mediocre or outright bad code.</p>
+                <img src="img/ottercode1.jpg">
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>This talk is for ...</h2>
+          <p class="fragment fade-in"><i>(everyone of course, but specifically...)</i></p>
+          <ul>
+            <li class="fragment fade-in">Self-taught Python users in the sciences or elsewhere</li>
+            <li class="fragment fade-in">Those who mentor them</li>
+          </ul>
+          <aside class="notes" data-markdown>
+            <textarea data-template>
+              * Put your speaker notes here.
+            </textarea>
+          </aside>
+        </section>
+        <section>
+          <p>Bozhidar Bozhanov: 
+            <a href="https://techblog.bozho.net/the-astonishingly-low-quality-of-scientific-code/">
+              https://techblog.bozho.net/the-astonishingly-low-quality-of-scientific-code/</a></p>
+          <div class="container">
+            <div class="col">
+                <img src="img/bozho.png">
+            </div>
+            <div class="col">
+                <p class="smaller"><i>"Scientists in general 
+                    can’t write good code. They 
+                    <span class="fragment highlight-current-green">write  code simply to 
+                      achieve their immediate goal</span>, 
+                    and then either throw it away, or keep using it for themselves. 
+                    They [...] don’t seem to be concerned with code quality, 
+                    code coverage, API design. Not to mention scientific infrastructure, deployment on 
+                    multiple servers, managing environment. <span class="fragment highlight-current-green">
+                        These things are rarely done properly in the 
+                        scientific community.
+                    </span>"</i></p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Create your other slides here</h2>
+          <aside class="notes" data-markdown>
+            <textarea data-template>
+              * Put your speaker notes here.
+            </textarea>
+          </aside>
+        </section>
+        <section>
+            <div class="container">
+                <div class="col">
+                  <img src="img/jack.jpg">
+                </div>
+                <div class="col">
+                   <img src="img/lara.jpg">
+                </div>
+              </div>
+          <p>
+            <a href="http://example.com">
+              <i class="fab fa-firefox"></i>example.com
+            </a>
+            •
+            <a href="https://github.com/chryss">
+              <i class="fab fa-github"></i>chryss
+            </a>
+            •
+            <a href="https://twitter.com/chrys">
+              <i class="fab fa-twitter"></i>@chrys
+            </a>
+          </p>
+          <p>
+            <a href="mailto:chris@threeowlsdata.com">
+              <i class="fas fa-envelope"></i>chris@threeowlsdata.com
+            </a>
+          </p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+              <i class="fab fa-creative-commons"></i>
+              <i class="fab fa-creative-commons-by"></i>
+            </a>
+          </p>
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          // Zoom in and out with Alt+click
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'third_party_plugins/menu.js' }
+        ],
+        menu: {
+          themes: true,
+          transitions: true,
+          openButton: false,
+          loadIcons: false
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "abstraction-for-students-of-all-the-things",
+  "version": "1.0.0",
+  "description": "Become a better programmer by thinking deeply about abstraction",
+  "homepage": "https://github.com/chryss/abstraction-for-students-of-all-the-things",
+  "bugs": "https://github.com/chryss/abstraction-for-students-of-all-the-things/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chryss/abstraction-for-students-of-all-the-things.git"
+  },
+  "author": "Chris Waigl",
+  "license": "CC-BY-4.0",
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "1.0.8",
+    "devicons": "1.8.0",
+    "reveal.js": "3.6.0",
+    "reveal.js-menu": "1.1.2"
+  },
+  "private": true
+}

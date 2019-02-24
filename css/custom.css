@@ -1,0 +1,17 @@
+/* Custom CSS rules */
+i {
+  margin-right: 0.25em;
+}
+
+.reveal .creativecommons {
+  margin-top: 2em;
+  margin-bottom: 0;
+}
+
+.reveal .smaller {
+  font-size: 0.65em;
+}
+
+.reveal .smallsmall {
+  font-size: 0.4em;
+}
